@@ -34,6 +34,12 @@ def add_sheet(file):
 
 def open_file():
     def calculate():
+
+        def download():
+            result_df.to_csv('measures.csv')
+            download_csv_button.pack_forget()
+            ttk.Label(result_window, text='Downloaded!').pack(pady=(20,20))
+
         selected_cols_list = []
         for i in range(len(check_variables)):
             if check_variables[i].get() == 1:
@@ -56,8 +62,11 @@ def open_file():
             })
 
         result_df = pd.DataFrame(result_dict)
+        result_df = result_df.transpose()
         result_df.reset_index(inplace=True)
-        result_df.columns = ['Dataset'] + selected_measures
+        result_df.columns = ['Measures'] + selected_cols_list
+
+
 
         result_window = tk.Toplevel(root)
 
@@ -66,11 +75,15 @@ def open_file():
 
         result_table = ttk.Treeview(result_window, show="headings", yscrollcommand=result_table_scroll.set,
                                     columns=list(result_df.columns), height=8)
-        result_table.pack()
+        result_table.pack(pady=(20,20), padx=(20,20))
         result_table_scroll.config(command=result_table.yview)
+
+        download_csv_button = ttk.Button(result_window, text='Download CSV', command=download)
+        download_csv_button.pack(side='top', pady=(20,20))
 
 
         for col in result_df.columns:
+            result_table.column(col, width=180)
             result_table.column(col, anchor='n')
 
         for heading in result_df.columns:
@@ -80,7 +93,7 @@ def open_file():
             result_table.insert('', tk.END, values=record[1:])
         result_window.mainloop()
 
-    file = askopenfilename(filetypes=[('CSV File', '*.csv'), ('Excel File', '*.xlsx'), ('All files', '*.*')])
+    file = askopenfilename(filetypes=[('CSV File', '*.csv')])
     add_sheet(file)
 
     open_file_button.pack_forget()
