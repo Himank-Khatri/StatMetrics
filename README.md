@@ -3,4 +3,4 @@ Desktop application for statistical analysis of CSV data. Users can
 open files, select columns, and compute statistical measures.
 Results can be downloaded as a CSV file.
 
-[Demo](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXR1dm04eXA3a29pOGtodTJpa3ZmbTM5M3EzY20yanRiZmFzcXVkbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/77EQms69ac9j9JTvIp/giphy.gif)
+![demo](https://github.com/Himank-Khatri/PyStaticsGUI/assets/86199877/ada1778c-dc31-4777-922d-1315776b687b)
