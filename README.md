@@ -14,7 +14,6 @@ A desktop application built with Python and Tkinter that allows users to upload 
   - Interquartile Range (IQR)
   - Variance
 - **Download Results**: Export the calculated metrics as a CSV file.
-- **User-Friendly Interface**: Clean and responsive UI using Tkinter for easy interaction.
 
 ## Technologies Used
 
