@@ -1,4 +1,4 @@
-# pystatisticsgui
+# auto-stats
 Desktop application for statistical analysis of CSV data. Users can
 open files, select columns, and compute statistical measures.
 Results can be downloaded as a CSV file.
